@@ -1,0 +1,82 @@
+# =========================================================
+# is-2026-checkpoint-01 - Ignore file
+# =========================================================
+
+
+# =========================================================
+# Environment variables
+# =========================================================
+# Archivos con secretos y configuración local
+.env
+.env.local
+.env.*.local
+!.env.example
+
+
+# =========================================================
+# Python backend
+# =========================================================
+# Bytecode y caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Entornos virtuales
+venv/
+env/
+.venv/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Logs
+*.log
+
+
+# =========================================================
+# Node / Frontend (si se agrega tooling futuro)
+# =========================================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+
+# =========================================================
+# Docker
+# =========================================================
+# Archivos de estado y temporales
+*.pid
+*.log
+
+# Docker volumes locales (si se crean en el repo)
+docker-data/
+data/
+
+
+# =========================================================
+# IDEs y editores
+# =========================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+
+# =========================================================
+# Sistema operativo
+# =========================================================
+.DS_Store
+Thumbs.db
+
+
+# =========================================================
+# Portainer / tooling local
+# =========================================================
+# No versionar datos de administración o volúmenes
+portainer_data/
