@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+# Hook de pre-commit para ejecutar validaciones antes del commit
+# Evita que código con errores o mal formato llegue al repositorio
