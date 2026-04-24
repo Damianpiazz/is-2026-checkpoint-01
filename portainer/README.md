@@ -77,6 +77,8 @@ Elegimos la opción Socket (el cable configurado en el docker-compose.yml)
 Elegimos la opción linux, cuya flag tiene la misma ruta que pusimos en el docker-compose.yml y creamos el entorno bajo el nombre "local"
 ![alt text](image-2.png)
 
+(aclaración: la captura dice que se llama ISlocal pero el nombre fue modificado en el segundo intento de creación, ya que el primero no se pudo concretar por un error "Failure. Forbidden - origin invalid")
+
 ![alt text](image-4.png)
 
 ![alt text](image-5.png)
