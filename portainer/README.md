@@ -62,6 +62,21 @@ Ya levantado el contenedor, vamos al puerto 9000 donde creamos un usuario en Por
 
 ![alt text](LogIn.jpeg)
 
-![alt text](In.jpeg)
+![alt text](image-6.png)
 
 ---
+
+## Creating enviroment
+
+Elegimos Docker Standalone:
+![alt text](image.png)
+
+Elegimos la opción Socket (el cable configurado en el docker-compose.yml)
+![alt text](image-1.png)
+
+Elegimos la opción linux, cuya flag tiene la misma ruta que pusimos en el docker-compose.yml y creamos el entorno bajo el nombre "local"
+![alt text](image-2.png)
+
+![alt text](image-4.png)
+
+![alt text](image-5.png)
