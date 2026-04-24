@@ -1,3 +1,19 @@
 services:
-  test:
-    image: hello-world
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce:latest
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    ports: 
+      - 9000:9000
+    deploy: 
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+
+volumes:
+  portainer_data:
+    name: portainer_data
