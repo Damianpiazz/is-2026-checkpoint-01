@@ -18,7 +18,7 @@ def db_connection():
     )
     return conn
 
-@app.route('/api/route', methods=['GET'])
+@app.route('/api/health', methods=['GET'])
 def health_check():
     return jsonify({"status": "ok", "message": "El servicio Backend está activo"}), 200
 
@@ -37,10 +37,10 @@ def get_team():
         for member in members:
             team_list.append(dict(zip(column_names, member)))
 
-            cursor.close()
-            conn.close()
+        cursor.close()
+        conn.close()
 
-            return jsonify(team_list), 200
+        return jsonify(team_list), 200
         
     except Exception as e:
         return jsonify({"error": "Error de conexión a PostgreSQL", "details": str(e)}), 500
@@ -50,7 +50,7 @@ def service_info():
     return jsonify({
         "service": "backend",
         "version": "1.0.0",
-        "desciption": "API REST para TeamBoard APP",
+        "description": "API REST para TeamBoard APP",
         "feature": "Feature 03",
         "framework": "Flask"
     }), 200
