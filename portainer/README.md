@@ -1,5 +1,8 @@
-# Deploy de Portainer
+# Portainer
+---
 
+## Deployment
+---
 Según la documentación, https://docs.portainer.io/start/install-ce/server/docker/linux#docker-compose se puede desplegar Portainer usando docker run o a través de Docker Compose. Elegimos la segunda opción.
 
 ```
@@ -47,3 +50,17 @@ volumes:
   portainer_data:
     name: portainer_data
 ```
+
+El próximo paso es hacer 
+``` bash
+docker compose up -d
+```
+
+## Logging in
+---
+Ya levantado el contenedor, vamos al puerto 9000 donde creamos un usuario en Portainer:
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
