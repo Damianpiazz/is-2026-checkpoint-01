@@ -31,7 +31,7 @@ def get_team():
         cursor.execute('SELECT * FROM members;')
         members = cursor.fetchall()
 
-        column_names = [i for i in cursor.description]
+        column_names = [column[0] for column in cursor.description]
 
         team_list = []
         for member in members:
