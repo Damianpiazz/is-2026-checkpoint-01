@@ -37,13 +37,17 @@ def get_team():
         for member in members:
             team_list.append(dict(zip(column_names, member)))
 
-        cursor.close()
-        conn.close()
-
         return jsonify(team_list), 200
         
     except Exception as e:
         return jsonify({"error": "Error de conexión a PostgreSQL", "details": str(e)}), 500
+    
+    finally:
+        if cursor:
+            cursor.close()
+
+        if conn:
+            conn.close()
     
 @app.route('/api/info', methods=['GET'])
 def service_info():
