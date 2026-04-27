@@ -1,6 +1,4 @@
 services:
-  test:
-    image: hello-world
   database:
     image: postgres:16-alpine
     environment:
@@ -54,6 +52,37 @@ services:
       timeout: 5s
       retries: 5
       start_period: 15s
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+
+    ports:
+      - "${FRONTEND_PORT}:8080"
+
+    environment:
+      API_URL: ${API_URL}
+
+    depends_on:
+      backend:
+        condition: service_healthy
+
+    command: >
+      sh -c "
+      echo \"window.API_URL='${API_URL}';\" > html/config.js &&
+      python3 -m http.server 8080 --directory html
+      "
+
+    restart: unless-stopped
+
+    deploy:
+    resources:
+      limits:
+        memory: 256M
+        cpus: "0.50"
+
+    networks:
+      - app-network
 
 networks:
   app-network:
