@@ -1,6 +1,4 @@
 services:
-  test:
-    image: hello-world
   database:
     image: postgres:16-alpine
     environment:
