@@ -82,3 +82,34 @@ Elegimos la opción linux, cuya flag tiene la misma ruta que pusimos en el docke
 ![alt text](image-4.png)
 
 ![alt text](image-5.png)
+
+---
+
+## Agregamos Back-End
+
+Agregamos las imagenes de la base de datos y del Back-End. Ejecutamos:
+
+``` bash
+docker compose down
+
+git merge main
+
+docker compose up -d --build
+```
+Ingresamos con el usuario y contraseña
+![alt text](image-7.png)
+
+![alt text](image-8.png)
+
+- Accedemos a los contenedores:
+![alt text](image-12.png)
+(Aclaración: las filas superiores y la última aparecen tachadas/vacías son contenedores locales que no forman parte del trabajo)
+Observamos que aparece las de la base de datos junto al backend corriendo en un contenedor is-2026-checkpoint-01-database-1
+![alt text](image-13.png)
+
+- Accedemos a los volúmenes:
+![alt text](image-16.png)
+De los cuales solo corresponden al trabajo los seleccionados, correspondiendo uno al contenedor de portainer y otro al de la base de datos.
+
+- Accedemos a los stacks:
+![alt text](image-14.png)
