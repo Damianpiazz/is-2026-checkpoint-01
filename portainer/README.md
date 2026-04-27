@@ -138,3 +138,39 @@ Observamos que aparece la de la base de datos corriendo en un contenedor is-2026
 - Accedemos a las imagenes:
 ![alt text](image-3.png)
 (Aclaración: las filas vacias no forman parte de este trabajo)
+
+---
+ ## Agregamos el Front-End
+Agregamos las imagenes del Front-End. Ejecutamos:
+
+ ``` bash
+docker compose down
+
+git merge main
+
+docker compose up -d --build
+```
+Ingresamos con el usuario y contraseña
+
+![alt text](image-6.png)
+
+- Accedemos a los contenedores:
+![alt text](image-9.png)
+(Aclaración: las filas superiores y la última aparecen tachadas/vacías son contenedores locales que no forman parte del trabajo)
+Observamos que aparece la de la base de datos corriendo en un contenedor is-2026-checkpoint-01-database-1, el Back-End en backend y el Front-End como frontend, ademas de la del portainer
+![alt text](image-17.png)
+
+- Accedemos a las imagenes:
+![alt text](image-18.png)
+(Aclaración: las filas vacias no forman parte de este trabajo)
+
+---
+
+# Resumen
+Al hacer:
+ ``` bash
+docker compose up -d --build
+```
+El docker-compose.yml levanta el contenedor de Portainer, corriendo en el puerto 9000 y a los contenedores del back, front y base de datos.
+
+Al levantar el contenedor de Portainer, podemos ver y orquestar todos los contenedores en http://localhost:9000.
