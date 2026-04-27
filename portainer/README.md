@@ -8,7 +8,7 @@ Según la documentación, https://docs.portainer.io/start/install-ce/server/dock
 services:
   portainer:
     container_name: portainer
-    image: portainer/portainer-ce:sts # aquí usaremos la última imagen, no sts
+    image: portainer/portainer-ce:sts # dejamos sts para seguir la rama estable de soporte
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -32,7 +32,7 @@ Agregamos el siguiente bloque al docker-compose.yml:
 services:
   portainer:
     container_name: portainer
-    image: portainer/portainer-ce:latest
+    image: portainer/portainer-ce:sts
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
@@ -134,3 +134,7 @@ Ingresamos con el usuario y contraseña
 (Aclaración: las filas superiores y la última aparecen tachadas/vacías son contenedores locales que no forman parte del trabajo)
 Observamos que aparece la de la base de datos corriendo en un contenedor is-2026-checkpoint-01-database-1 y el Back-End en backend, ademas de la del portainer
 ![alt text](image-15.png)
+
+- Accedemos a las imagenes:
+![alt text](image-3.png)
+(Aclaración: las filas vacias no forman parte de este trabajo)
