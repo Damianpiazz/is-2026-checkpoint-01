@@ -1,4 +1,18 @@
 services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce:sts
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_data:/data
+    ports:
+      - "9000:9000"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
   database:
     image: postgres:16-alpine
     environment:
@@ -76,10 +90,10 @@ services:
     restart: unless-stopped
 
     deploy:
-    resources:
-      limits:
-        memory: 256M
-        cpus: "0.50"
+      resources:
+        limits:
+          memory: 256M
+          cpus: "0.50"
 
     networks:
       - app-network
@@ -89,4 +103,5 @@ networks:
     driver: bridge
 
 volumes:
+  portainer_data:
   db_data:
