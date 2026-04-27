@@ -1,7 +1,9 @@
 services:
+  test:
+    image: hello-world
   portainer:
     container_name: portainer
-    image: portainer/portainer-ce:latest
+    image: portainer/portainer-ce:sts
     restart: always
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
